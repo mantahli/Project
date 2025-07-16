@@ -43,9 +43,12 @@ An ASP.NET Core MVC web app to manage shared resources and bookings within an or
    git clone https://github.com/mantahli/resource-booking-system.git
    cd ResourceBookingSystem
 2.Restore packages:
+```bash
 dotnet restore
 3.Apply database migrations:
+```bash
 dotnet ef database update --configuration Release
 4.Run the application:
+```bash
 dotnet run --configuration Release
 
