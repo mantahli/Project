@@ -1,0 +1,49 @@
+@model IEnumerable<ResourceBookingSystem.Models.Resource>
+
+@{
+    ViewData["Title"] = "Resources";
+}
+
+<h1>Resources</h1>
+
+<!-- 🔍 Search Form -->
+<form asp-controller="Resources" asp-action="Index" method="get">
+    <div class="input-group mb-3">
+        <input type="text" name="searchString" class="form-control" placeholder="Search resources..." />
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </div>
+</form>
+
+<!-- ➕ Create New Resource -->
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Resource</a>
+</p>
+
+<!-- 📋 Resource Table -->
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Location)</th>
+            <th>@Html.DisplayNameFor(model => model.Capacity)</th>
+            <th>@Html.DisplayNameFor(model => model.IsAvailable)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Location)</td>
+                <td>@Html.DisplayFor(modelItem => item.Capacity)</td>
+                <td>@(item.IsAvailable ? "✅ Available" : "❌ Unavailable")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

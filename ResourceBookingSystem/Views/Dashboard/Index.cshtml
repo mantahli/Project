@@ -1,0 +1,29 @@
+
+@model ResourceBookingSystem.ViewModels.DashboardViewModel
+
+
+<h1>Booking Dashboard</h1>
+
+<h2>Today's Bookings</h2>
+@if (Model.TodaysBookings.Any())
+{
+    <table class="table">
+        <!-- Table content -->
+    </table>
+}
+else
+{
+    <p>No bookings scheduled for today.</p>
+}
+
+<h2>Upcoming Bookings</h2>
+@if (Model.UpcomingBookings.Any())
+{
+    <table class="table">
+        <!-- Table content -->
+    </table>
+}
+else
+{
+    <p>No upcoming bookings.</p>
+}
