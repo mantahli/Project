@@ -19,3 +19,33 @@ An ASP.NET Core MVC web app to manage shared resources and bookings within an or
   - Intuitive calendar interface
   - Responsive design
   - Form validation and error handling
+ 
+  ## Technologies
+
+- ASP.NET Core 9.0 MVC
+- Entity Framework Core 9.0
+- SQL Server 2022 (LocalDB supported)
+- Bootstrap 5.3
+- HTML6/CSS3 features
+
+  ## Getting Started
+
+### Prerequisites
+
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
+- [Visual Studio 2022 v17.8+](https://visualstudio.microsoft.com/) (Recommended)
+- SQL Server 2022 Express (or higher)
+
+  ### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mantahli/resource-booking-system.git
+   cd ResourceBookingSystem
+2.Restore packages:
+dotnet restore
+3.Apply database migrations:
+dotnet ef database update --configuration Release
+4.Run the application:
+dotnet run --configuration Release
+
